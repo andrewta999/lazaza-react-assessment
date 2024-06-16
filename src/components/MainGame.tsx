@@ -59,7 +59,7 @@ export default function MainGame({numCorrect, numQuestions, questions, setNumCor
     <div>
       <h3><div dangerouslySetInnerHTML={{ __html: curQuestion.question }} /></h3>
       <div>
-        {options.map(option => <div>
+        {options.map(option => <div key={option}>
           <input
             type="radio"
             value={option}

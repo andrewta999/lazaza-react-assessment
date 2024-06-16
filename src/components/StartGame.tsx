@@ -50,6 +50,7 @@ export default function StartGame({
           <div>Number of Questions:</div>
           <input
             type="text"
+            aria-label="number of questions"
             value={numQuestions}
             onChange={(e) => setNumQuestions(e.target.value)}
           />
@@ -59,7 +60,7 @@ export default function StartGame({
           <div>Select Category:</div>
           <select onChange={(e) => setCategory(e.target.value)}>
             {categories.map((category) => (
-              <option value={category.id}>{category.name}</option>
+              <option key={category.id} value={category.id}>{category.name}</option>
             ))}
           </select>
         </Flex>
