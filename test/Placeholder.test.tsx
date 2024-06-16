@@ -2,7 +2,7 @@ import { screen, render } from "@testing-library/react";
 import Placeholder from "../src/components/Placeholder";
 
 const setup = () => {
-  return render(<Placeholder questions={[]} />);
+  return render(<Placeholder questions={[]} onStartGame={() => {}} />);
 };
 
 describe("Placeholder", () => {
