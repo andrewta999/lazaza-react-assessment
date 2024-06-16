@@ -1,9 +1,6 @@
-import { Question } from "../types";
+import { Question, Category } from "../types";
 import unreliableAxios from "./unreliableAxios";
 
-const AMOUNT = "5";
-const CATEGORY = "11";
-const DIFFICULTY = "medium";
 const TYPE = "multiple";
 
 export default class APIClient {
@@ -14,12 +11,20 @@ export default class APIClient {
     this.baseURL = params.baseURL;
   }
 
-  public async getQuestions() {
+  public async getQuestions(numQuestions: string, category: string, difficulty: string) {
     const res = (await unreliableAxios.get(
       this.baseURL +
-        `/api.php?amount=${AMOUNT}&category=${CATEGORY}&difficulty=${DIFFICULTY}&type=${TYPE}`
+        `/api.php?amount=${numQuestions}&category=${category}&difficulty=${difficulty}&type=${TYPE}`
     )) as unknown as { data: { results: Question[] } };
 
     return res.data.results;
+  }
+
+  public async getCategories() {
+    const res = (await unreliableAxios.get(
+      `${this.baseURL}/api_category.php`
+    )) as unknown as { data: { trivia_categories: Category[] } };
+
+    return res.data.trivia_categories;
   }
 }

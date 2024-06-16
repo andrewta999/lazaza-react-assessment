@@ -6,3 +6,8 @@ export type Question = {
   correct_answer: string;
   incorrect_answers: string[];
 };
+
+export type Category = {
+  id: number;
+  name: string;
+}
