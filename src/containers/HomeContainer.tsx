@@ -5,7 +5,6 @@ import { DIFFICULTY, GAME_MODE } from "../utils/difficulty";
 import StartGame from "../components/StartGame";
 import MainGame from "../components/MainGame";
 import FinishGame from "../components/FinishGame";
-import Flex from "../componentLibrary/Flex";
 
 type Props = {
   apiClient: APIClient;

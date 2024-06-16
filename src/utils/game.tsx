@@ -1,7 +1,7 @@
 import { Question } from "../types";
 
 export function shuffleAnswers(question: Question) {
-  let array = [...question.incorrect_answers, question.correct_answer];
+  const array = [...question.incorrect_answers, question.correct_answer];
 
   let currentIndex = array.length,
     randomIndex;
